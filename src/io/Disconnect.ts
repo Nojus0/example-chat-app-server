@@ -1,9 +1,9 @@
 import { IMessage } from "../interfaces";
 import { removeAuthenticated, SendAllAuth } from "./Authenticated";
-// import { Authenticated, setAuthenticated, UseAllAuthed } from "./Authenticated";
 import { ChatSocket } from "./Connection";
 
 export default function (socket: ChatSocket) {
+    if (socket.username == null) return;
 
     SendAllAuth({
         IsSender: false,
@@ -11,7 +11,6 @@ export default function (socket: ChatSocket) {
         sender: "Server"
     })
 
-    if (socket.username != null)
-        removeAuthenticated(socket);
+    removeAuthenticated(socket);
 
 }
