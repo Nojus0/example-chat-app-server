@@ -7,6 +7,7 @@ function default_1(socket) {
         message: socket.username + " left.",
         sender: "Server"
     });
-    Authenticated_1.removeAuthenticated(socket);
+    if (socket.username != null)
+        Authenticated_1.removeAuthenticated(socket);
 }
 exports.default = default_1;

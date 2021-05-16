@@ -11,6 +11,7 @@ export default function (socket: ChatSocket) {
         sender: "Server"
     })
 
-    removeAuthenticated(socket);
+    if (socket.username != null)
+        removeAuthenticated(socket);
 
 }
