@@ -25,4 +25,4 @@ app.use("/api", http_2.ROUTER);
 var server = http_1.default.createServer(app);
 exports.io = new socket_io_1.Server(server, { cors: { credentials: true, origin: "*" } });
 server.listen(PORT, function () { return console.log("Server listening on port " + PORT); });
-require("./io/Connection");
+require("./io/Connection"); // Imports when io is set up, otherwise undefined
