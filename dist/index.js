@@ -11,6 +11,12 @@ var Config_1 = require("./Config");
 var path_1 = __importDefault(require("path"));
 var cors_1 = __importDefault(require("cors"));
 var http_2 = require("./http");
+var dotenv_1 = require("dotenv");
+dotenv_1.config();
+if (process.env.SECRET == null)
+    console.log("Secret Token for JWT not found in env");
+else
+    console.log("Secret Found: " + process.env.SECRET);
 var PORT = process.env.PORT || 4000;
 exports.CONFIG = new Config_1.Config(path_1.default.join(__dirname, "accounts.json"), []);
 var app = express_1.default();

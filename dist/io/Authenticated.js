@@ -1,10 +1,8 @@
 "use strict";
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SendAllAuth = exports.UseAllAuthed = exports.removeAuthenticated = exports.addAuthenticated = exports.setAuthenticated = exports.Authenticated = void 0;
@@ -15,7 +13,7 @@ function setAuthenticated(e) {
 exports.setAuthenticated = setAuthenticated;
 function addAuthenticated(e) {
     console.log("[IO] " + e.username + " authenticated");
-    exports.Authenticated = __spreadArrays(exports.Authenticated, [e]);
+    exports.Authenticated = __spreadArray(__spreadArray([], exports.Authenticated), [e]);
 }
 exports.addAuthenticated = addAuthenticated;
 function removeAuthenticated(e) {

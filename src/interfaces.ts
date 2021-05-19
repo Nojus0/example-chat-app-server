@@ -1,7 +1,6 @@
-import { Socket } from "socket.io";
 import { ChatSocket } from "./io/Connection";
 
-export const SECRET = "pydariugi";
+export const SECRET = process.env.SECRET;
 
 export interface IAccount {
     username: string,

@@ -6,6 +6,11 @@ import { IAccount } from "./interfaces"
 import path from "path";
 import cors from "cors"
 import { ROUTER } from "./http";
+import { config } from "dotenv"
+config();
+if (process.env.SECRET == null) console.log(`Secret Token for JWT not found in env`);
+else console.log(`Secret Found: ${process.env.SECRET}`);
+
 const PORT = process.env.PORT || 4000;
 
 export const CONFIG = new Config<IAccount[]>(path.join(__dirname, "accounts.json"), []);
