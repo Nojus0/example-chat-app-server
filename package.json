@@ -4,10 +4,9 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "build": "rmdir /s /q dist & tsc --resolveJsonModule",
+    "start-build": "rmdir /s /q dist & tsc --resolveJsonModule",
     "start": "node ./dist/index.js"
   },
-  "heroku-run-build-script": false,
   "keywords": [],
   "author": "",
   "license": "ISC",
