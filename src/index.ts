@@ -7,6 +7,8 @@ import path from "path";
 import cors from "cors"
 import { ROUTER } from "./http";
 import { config } from "dotenv"
+import * as accounts from "./accounts.json"; // copy to dist doesnt get added in transpiled js
+
 config();
 if (process.env.SECRET == null) console.log(`Secret Token for JWT not found in env`);
 else console.log(`Secret Found: ${process.env.SECRET}`);
@@ -22,4 +24,4 @@ const server = http.createServer(app);
 export const io = new Server(server, { cors: { credentials: true, origin: "*" } });
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
-import "./io/Connection";
+import "./io/Connection"; // Imports when io is set up, otherwise undefined
