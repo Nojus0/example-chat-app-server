@@ -36,6 +36,9 @@ ROUTER.get("/login", (req, res) => {
 
 })
 
+ROUTER.get("/health", (req,res)=>{
+    res.status(200).send("ok")
+})
 
 ROUTER.get("/verify", (req, res) => {
     const { auth } = req.query;

@@ -35,7 +35,7 @@ export class Config<T> {
             for (const r_item of ItemsToRemove) {
                 CURRENT = CURRENT.filter((item: any) => item != r_item);
             }
-        } catch (err) {
+        } catch (err: any) {
             console.log(`
             [CONFIG] Error removing items from array config file ${this.path} error: ${err.message}
             `)

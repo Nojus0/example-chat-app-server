@@ -1,8 +1,6 @@
-import jwt from "jsonwebtoken"
-import { Socket } from "socket.io";
-import { IAccount, IMessage, ISendMessage, SECRET } from "../interfaces";
-import { UseAllAuthed } from "./Authenticated";
-import { ChatSocket } from "./Connection";
+import {IMessage} from "../interfaces";
+import {UseAllAuthed} from "./Authenticated";
+import {ChatSocket} from "./Connection";
 
 export default function (socket: ChatSocket, message: string) {
 
@@ -18,6 +16,8 @@ export default function (socket: ChatSocket, message: string) {
 
             e.emit("new:message", MESSAGE);
         })
-    } catch (error) { return; }
+    } catch (error) {
+        return;
+    }
 
 }
